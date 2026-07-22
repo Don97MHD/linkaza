@@ -7,13 +7,13 @@ import NavMenu from './nav-menu';
 import MobileMenus from './mobile-menus';
 import logo from "@assets/img/logo/linkaza_white.svg";
 
-const LangSwitch = () => {
+const LangSwitch = ({ mobile }) => {
     const router = useRouter();
     const switchTo = router.locale === 'ar' ? 'en' : 'ar';
     return (
         <button
             type="button"
-            className="lz-lang-switch"
+            className={`lz-lang-switch ${mobile ? 'lz-lang-switch--mobile' : ''}`}
             onClick={() => router.push(router.asPath, router.asPath, { locale: switchTo })}
         >
             {switchTo === 'ar' ? 'العربية' : 'EN'}
@@ -35,16 +35,19 @@ const HeaderThree = ({style_7}) => {
                         <div className="row align-items-center">
                             {/* Logo Section */}
                             <div className="col-xl-2 col-lg-2">
-                                <div className="logo">
+                                <div className="logo d-flex align-items-center justify-content-between">
                                     <Link href="/"> <Image src={logo} alt="Linkaza" priority /> </Link>
+                                    <div className="d-lg-none">
+                                        <LangSwitch mobile />
+                                    </div>
                                 </div>
                             </div>
-                            
+
                             {/* Menu Section */}
                             <div className="col-xl-8 col-lg-8 position-static">
                                 <div className={`main-menu ${style_7 ? "" : "pink-menu"} text-center d-none d-lg-block`}>
                                     <nav id="mobile-menu">
-                                        <NavMenu />  
+                                        <NavMenu />
                                     </nav>
                                 </div>
                                 <div className="mobile-menu mean-container d-lg-none">
