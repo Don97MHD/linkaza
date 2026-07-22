@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow Next.js internal build files (Optional but cleaner)
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://linkaza.com/sitemap.xml

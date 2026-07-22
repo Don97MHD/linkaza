@@ -1,0 +1,76 @@
+const menu_data = [
+  {
+    id: 1,
+    mega_menu: false,
+    has_dropdown: false,
+    title: "Home",
+    title_ar: "الرئيسية",
+    link: "/",
+  },
+  {
+    id: 2,
+    mega_menu: false,
+    has_dropdown: true,
+    title: "Solutions",
+    title_ar: "الحلول",
+    link: "/solutions", // صفحة عرض الحلول العامة
+    sub_menus: [
+      { link: "/agencies", title: "For Agencies", title_ar: "للوكالات" },
+      { link: "/consultants", title: "For Consultants", title_ar: "للمستشارين" },
+      { link: "/businesses", title: "For Businesses", title_ar: "للشركات" },
+      { link: "/publishers", title: "For Publishers", title_ar: "للناشرين" },
+    ],
+  },
+  {
+    id: 3,
+    mega_menu: false,
+    has_dropdown: false,
+    title: "Marketplace",
+    title_ar: "السوق",
+    link: "/marketplace",
+  },
+  {
+    id: 7,
+    mega_menu: false,
+    has_dropdown: false,
+    title: "How It Works",
+    title_ar: "آلية العمل",
+    link: "/how-it-works",
+  },
+  {
+    id: 4,
+    mega_menu: false,
+    has_dropdown: true,
+    title: "Services",
+    title_ar: "الخدمات",
+    link: "#",
+    sub_menus: [
+      { link: "/content-service", title: "Content Writing", title_ar: "كتابة المحتوى" },
+      { link: "/strategy-builder", title: "Strategy Builder", title_ar: "بناء الاستراتيجية" },
+      { link: "/analytics", title: "Analytics & ROI", title_ar: "التحليلات والعائد" },
+    ],
+  },
+  {
+    id: 5,
+    mega_menu: false,
+    has_dropdown: false,
+    title: "Pricing",
+    title_ar: "الأسعار",
+    link: "/pricing",
+  },
+  {
+    id: 6,
+    mega_menu: false,
+    has_dropdown: true,
+    title: "Company",
+    title_ar: "الشركة",
+    link: "#",
+    sub_menus: [
+      { link: "/about", title: "About Us", title_ar: "من نحن" },
+      { link: "/blog", title: "Blog", title_ar: "المدونة" },
+      { link: "/contact", title: "Contact Us", title_ar: "تواصل معنا" },
+      { link: "/affiliate", title: "Affiliate Program", title_ar: "برنامج الإحالة" },
+    ],
+  },
+];
+export default menu_data;
