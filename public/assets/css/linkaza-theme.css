@@ -715,7 +715,7 @@ a, a:focus, a:hover, button {
 [dir="rtl"] .text-end { text-align: left !important; }
 [dir="rtl"] .text-start { text-align: right !important; }
 
-/* mr-*/ml-* — Bootstrap trailing/leading margin utilities, not RTL-aware by default */
+/* mr-N and ml-N — Bootstrap trailing/leading margin utilities, not RTL-aware by default */
 [dir="rtl"] .mr-5 { margin-right: 0; margin-left: 5px; }
 [dir="rtl"] .ml-5 { margin-left: 0; margin-right: 5px; }
 [dir="rtl"] .mr-10 { margin-right: 0; margin-left: 10px; }
