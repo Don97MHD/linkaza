@@ -1,7 +1,6 @@
 export type Locale = 'ar' | 'en';
 
 export const origins = { ar: 'https://linkaza.com', en: 'https://en.linkaza.com' } as const;
-export const APP_URL = 'https://app.linkaza.com/';
 export const productionDomains = process.env.NEXT_PUBLIC_SITE_MODE === 'production';
 export const isIndexable = process.env.INDEXABLE_SITE === 'true';
 

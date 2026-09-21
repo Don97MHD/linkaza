@@ -48,6 +48,16 @@ async function expectHealthyPage(page: Page) {
 
 for (const locale of locales) {
   test.describe(`${locale.locale} marketing experience`, () => {
+    test('header and primary CTAs open the matching auth pages without a motion toggle', async ({ page }) => {
+      await page.goto(locale.root);
+      await expect(page.locator('.motion-toggle')).toHaveCount(0);
+      await expect(page.locator('.header-login')).toHaveAttribute('href', 'https://app.linkaza.com/login');
+      await expect(page.locator('.header-cta')).toHaveAttribute('href', 'https://app.linkaza.com/register');
+      await expect(page.locator('.hero-buttons .button-primary')).toHaveAttribute('href', 'https://app.linkaza.com/register');
+      await page.goto(`${locale.prefix}/businesses`);
+      await expect(page.locator('.page-hero .button-primary')).toHaveAttribute('href', 'https://app.linkaza.com/register');
+    });
+
     test('homepage has correct language, direction and search metadata', async ({ page }) => {
       const response = await page.goto(locale.root);
       expect(response?.status()).toBe(200);

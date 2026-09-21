@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { APP_URL, choose, hrefFor, type Locale } from '@/lib/site';
+import { choose, hrefFor, type Locale } from '@/lib/site';
+import { AuthLink } from './auth-link';
 import { BrandMark, Icon } from './icon';
 
 export function ClosingCta({ locale }: { locale: Locale }) {
-  return <section className="closing-section container"><div className="closing-cta"><div className="closing-art" aria-hidden="true"><i/><i/><i/><Icon name="link"/></div><div className="closing-copy"><span className="eyebrow">{choose(locale, 'خطوتك التالية تبدأ هنا', 'YOUR NEXT CHAPTER STARTS HERE')}</span><h2>{choose(locale, 'دع قصّتك تصل أبعد.', 'Let your story travel further.')}</h2><p>{choose(locale, 'المحتوى المناسب يستحق المكان المناسب. اكتشف فرصتك القادمة مع لينكازا.', 'Great content deserves the right audience. Discover your next opportunity with Linkaza.')}</p><a className="button button-lime" href={APP_URL}>{choose(locale, 'استكشف المنصة', 'Explore the platform')}<Icon name="up"/></a><span className="cta-footnote">{choose(locale, 'راجع المواقع وشروط العروض قبل الطلب', 'Review publishers and offer terms before ordering')}</span></div></div></section>;
+  return <section className="closing-section container"><div className="closing-cta"><div className="closing-art" aria-hidden="true"><i/><i/><i/><Icon name="link"/></div><div className="closing-copy"><span className="eyebrow">{choose(locale, 'خطوتك التالية تبدأ هنا', 'YOUR NEXT CHAPTER STARTS HERE')}</span><h2>{choose(locale, 'دع قصّتك تصل أبعد.', 'Let your story travel further.')}</h2><p>{choose(locale, 'المحتوى المناسب يستحق المكان المناسب. اكتشف فرصتك القادمة مع لينكازا.', 'Great content deserves the right audience. Discover your next opportunity with Linkaza.')}</p><AuthLink locale={locale} destination="register" className="button button-lime">{choose(locale, 'أنشئ حسابك الآن', 'Create your account')}<Icon name="up"/></AuthLink><span className="cta-footnote">{choose(locale, 'راجع المواقع وشروط العروض قبل الطلب', 'Review publishers and offer terms before ordering')}</span></div></div></section>;
 }
 
 export function SiteFooter({ locale }: { locale: Locale }) {

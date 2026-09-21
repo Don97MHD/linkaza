@@ -1,7 +1,8 @@
 'use client';
 
 import { useId, useState } from 'react';
-import { APP_URL, choose, type Locale } from '@/lib/site';
+import { choose, type Locale } from '@/lib/site';
+import { AuthLink } from './auth-link';
 import { Icon } from './icon';
 
 const samples = [
@@ -43,7 +44,7 @@ export function MarketplaceDemo({ locale, expanded = false }: { locale: Locale; 
         <div className="publisher-card-heading"><span className={`publisher-monogram ${item.color}`}><Icon name={item.icon}/></span><span className="tag">{categories.find(cat => cat.id === item.category)?.[locale]}</span></div>
         <h3>{item.name[locale]}</h3><span className="publisher-domain" dir="ltr">{item.domain}</span>
         <div className="publisher-metrics"><div><span>{choose(locale, 'قوة النطاق', 'Domain rating')}</span><strong dir="ltr">{item.dr}<small> / 100</small></strong><div className="metric-bar"><span style={{ width: `${item.dr}%` }}/></div></div><div><span>{choose(locale, 'زيارات نموذجية', 'Sample visits')}</span><strong dir="ltr">{item.traffic}</strong><span className="metric-caption">{choose(locale, 'بيانات افتراضية', 'Illustrative data')}</span></div></div>
-        <div className="publisher-bottom"><span><Icon name="globe"/>{item.language === 'ar' ? choose(locale, 'العربية', 'Arabic') : choose(locale, 'الإنكليزية', 'English')}</span><a href={APP_URL}>{choose(locale, 'العروض الفعلية', 'See live offers')}<Icon name="arrow"/></a></div>
+        <div className="publisher-bottom"><span><Icon name="globe"/>{item.language === 'ar' ? choose(locale, 'العربية', 'Arabic') : choose(locale, 'الإنكليزية', 'English')}</span><AuthLink locale={locale} destination="register">{choose(locale, 'سجّل لعرض المواقع', 'Sign up to view')}<Icon name="arrow"/></AuthLink></div>
       </article>)}
     </div>
     {visible.length === 0 && <div className="empty-state"><Icon name="search"/><h3>{choose(locale, 'لا توجد نتائج مطابقة في النموذج', 'No matching demo results')}</h3><p>{choose(locale, 'جرّب كلمة أخرى أو غيّر خيارات التصفية.', 'Try another search or adjust your filters.')}</p><button className="button button-outline" onClick={reset}>{choose(locale, 'إعادة ضبط الفلاتر', 'Reset filters')}</button></div>}
