@@ -83,7 +83,7 @@
   .hero-assurance{display:flex;gap:23px;margin-top:24px;color:#778071;font-size:10px}
   .hero-assurance>span{display:flex;align-items:center;gap:6px}
   .hero-assurance .icon{width:14px;height:14px;color:#6c8a51}
-  .hero-visual{position:relative;width:100%;padding-inline:2px;animation:hero-enter .9s ease-out both}
+  .hero-visual{position:relative;width:100%;padding-inline:2px;animation:hero-enter .6s ease-out both}
   .visual-caption,.visual-coordinate{position:absolute;font-family:var(--font-latin),sans-serif;font-size:8px;color:#92a18b;letter-spacing:.15em;direction:ltr}
   .visual-caption{top:7%;left:9%;writing-mode:vertical-rl;transform:rotate(180deg)}
   .visual-coordinate{right:14%;bottom:3%}
@@ -268,7 +268,7 @@
   .window-footer,.floating-tag{color:#536537}
   .audience-panel li,.subpage-checks>span,.project-title>div>span{color:#586b4d}
   .search-field input::placeholder{color:#667657}
-  @keyframes hero-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes hero-enter{from{transform:translateY(10px)}to{transform:translateY(0)}}
 }
 @layer responsive {
   @media(min-width:1450px){.hero{min-height:695px;gap:55px}.hero h1{font-size:84px}[lang=ar] .hero h1{font-size:74px}}
