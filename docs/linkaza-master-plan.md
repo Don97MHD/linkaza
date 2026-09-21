@@ -183,3 +183,6 @@
 **تنبيهان مهمّان:**
 - **مساحة القرص:** بيئة سحب بيانات Search Console كانت موقوفة بـ Cowork لحتى تتحرّر مساحة. بـ Claude Code المحلي تقدر تشغّلها عبر service-account JSON.
 - **الجودة قبل الكمية:** جوجل اليوم بيعاقب الروابط المشتراة منخفضة الجودة (تحديثات Panda/Penguin). محتوى أصلي وقيمة حقيقية = استدامة. هالمبدأ لازم ينعكس بالنصوص.
+# Historical plan for the previous Pages Router template
+
+This document predates the redesign and describes the former implementation. See `README.md`, `CLAUDE.md` and `docs/REDESIGN_HANDOFF_AR.md` for the current site.
