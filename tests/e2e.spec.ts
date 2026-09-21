@@ -48,6 +48,21 @@ async function expectHealthyPage(page: Page) {
 
 for (const locale of locales) {
   test.describe(`${locale.locale} marketing experience`, () => {
+    test('five masked preview listings gate further scrolling behind login', async ({ page }) => {
+      await page.goto(`${locale.prefix}/marketplace`);
+      const preview = page.locator('.backlink-preview');
+      await expect(preview.locator('.preview-row')).toHaveCount(5);
+      await expect(preview.locator('.preview-domain-mask')).toHaveCount(5);
+      expect(await preview.locator('.preview-rows').innerHTML()).not.toMatch(/https?:\/\/|\.com\b|\.net\b/i);
+      await preview.locator('.preview-viewport').evaluate(element => { element.scrollTop = 30; });
+      const gate = page.getByRole('dialog');
+      await expect(gate).toBeVisible();
+      await expect(gate.getByRole('link', { name: locale.locale === 'ar' ? 'تسجيل الدخول' : 'Log in' })).toHaveAttribute('href', 'https://app.linkaza.com/login');
+      await expect(gate.getByRole('link', { name: locale.locale === 'ar' ? 'إنشاء حساب جديد' : 'Create account' })).toHaveAttribute('href', 'https://app.linkaza.com/register');
+      await page.keyboard.press('Escape');
+      await expect(gate).not.toBeVisible();
+    });
+
     test('header and primary CTAs open the matching auth pages without a motion toggle', async ({ page }) => {
       await page.goto(locale.root);
       await expect(page.locator('.motion-toggle')).toHaveCount(0);

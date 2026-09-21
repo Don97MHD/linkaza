@@ -7,6 +7,7 @@ const paths: Record<string, React.ReactNode> = {
   globe: <><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></>,
   check: <path d="m5 12 4.5 4.5L19 7" />,
   shield: <><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-6"/></>,
+  lock: <><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></>,
   link: <><path d="m10 14 4-4m-6 7-1 1a4 4 0 0 1-5-5l4-4a4 4 0 0 1 5 0m2-2 1-1a4 4 0 0 1 5 5l-4 4a4 4 0 0 1-5 0"/></>,
   layers: <><path d="m12 3 10 5-10 5L2 8Zm-9 9 9 5 9-5m-18 5 9 5 9-5"/></>,
   chart: <><path d="M4 3v17h17M8 15l4-5 4 2 5-7"/></>,
