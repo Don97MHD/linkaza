@@ -36,3 +36,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local audits, browser sessions and credentials never belong in source control.
+/.playwright-cli/
+/output/
+/test-results/
+/playwright-report/
+/.env
+/.env.*
+!/.env.example
+*service-account*.json
+seo-claude-*.json
+/LINKAZA_SITE_STRATEGY_AR.md
