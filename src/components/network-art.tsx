@@ -134,19 +134,19 @@ export function NetworkArt({ locale }: NetworkArtProps) {
       <div className="network-art__card network-art__card--insights" dir={arabic ? 'rtl' : 'ltr'}>
         <div className="network-art__insight-head">
           <span className="network-art__tiny-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M2.5 11L6 7.5L9 10L13.5 4.5M10 4.5H13.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
-          <strong>{arabic ? 'روابط تصنع الفرق' : 'Meaningful connections'}</strong>
+          <strong>{arabic ? 'اختيار موقع مناسب' : 'Relevant publisher choice'}</strong>
         </div>
         <div className="network-art__chart">
           {[27, 43, 35, 52, 47, 68, 60, 78, 87, 100].map((height, index) => (
             <span key={index} style={{ height: `${height}%`, opacity: 0.32 + index * 0.068 }} />
           ))}
         </div>
-        <div className="network-art__chart-caption"><span>{arabic ? 'رحلة نحو جمهورك' : 'A path to your audience'}</span><span>{arabic ? 'تصوّر توضيحي' : 'Illustration'}</span></div>
+        <div className="network-art__chart-caption"><span>{arabic ? 'مؤشرات للمقارنة' : 'Signals to compare'}</span><span>{arabic ? 'تصوّر توضيحي' : 'Illustration'}</span></div>
       </div>
 
       <div className="network-art__pill" dir={arabic ? 'rtl' : 'ltr'}>
         <span className="network-art__pill-dot" />
-        {arabic ? 'الفكرة الصحيحة، في المكان الصحيح.' : 'Your story. The right place.'}
+        {arabic ? 'الرابط المناسب في الموقع المناسب.' : 'The right link on the right site.'}
       </div>
     </div>
   );
